@@ -69,46 +69,24 @@ const images = [
 
 const galleryImages = document.querySelector('.gallery');
 
-const createImage = images.map((preview, original, description)=>{
-    return ``
-})
+const createImage = images.map(el=>`
+<li class="gallery-item">
+<a class="gallery-link" href="${el.original}">
+    <img 
+        class="gallery-image" 
+        src="${el.preview}" 
+        alt="${el.description}" 
+        />
+</a>
+</li>`
+).join(' ');
+
+galleryImages.innerHTML= createImage;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// galleryImages.innerHTML = images.map(({ preview, original, description }) => 
-//     `<li class="gallery-item">
-//     <a class="gallery-link" href="${original}">
-//         <img 
-//             class="gallery-image" 
-//             src="${preview}" 
-//             alt="${description}" 
-//             />
-//     </a>
-// </li>`
-// ).join(' ');
-
-// new SimpleLightbox('.gallery a', {
-//     captionsData: 'alt',
-//     captionDelay: 250,
-// });
+new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+});
 
 
