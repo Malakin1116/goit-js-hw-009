@@ -1,4 +1,4 @@
-name: Magic
+name: Build and deploy to GitHub Pages
 
 on:
   push:
